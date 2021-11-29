@@ -1,7 +1,7 @@
 {
-  "name": "Getting Started Example",
+  "name": "Funky Extension",
   "version": "1.0",
-  "description": "Build an Extension!",
+  "description": "Funky Extension",
   "manifest_version": 2,
   "browser_action": {
     "default_popup": "popup.html"
