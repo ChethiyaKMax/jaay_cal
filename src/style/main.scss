@@ -12,10 +12,13 @@
 $poppinsRegular: "Poppins-Regular";
 $poppinsMedium: "Poppins-Medium";
 
-body {
+* {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+}
+
+body {
   width: 400px;
   height: 600px;
 
@@ -32,7 +35,7 @@ body {
       .user {
         width: 200px;
         font-style: normal;
-        color: #354D64;
+        color: #354d64;
 
         .user-name {
           font-family: $poppinsMedium;
@@ -48,14 +51,14 @@ body {
           line-height: 18px;
         }
       }
-      .notifications{
+      .notifications {
         display: flex;
 
-        .notiCount{
+        .notiCount {
           width: 13.47px;
           height: 13.47px;
           border-radius: 50%;
-          background-color: #FBB03B;
+          background-color: #fbb03b;
           transform: translate(28px, 2.47px);
           font-size: 8px;
           font-family: $poppinsRegular;
@@ -74,6 +77,89 @@ body {
           width: 22px;
           border: 1px solid black;
           border-radius: 2px;
+        }
+      }
+    }
+  }
+
+  .points-wrapper {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+
+    .point-count {
+      display: flex;
+      justify-content: center;
+      transform: translateX(10px);
+
+      img {
+        height: 23px;
+        transform: translateY(20px);
+      }
+    }
+
+    .points {
+      font-family: $poppinsRegular;
+      font-size: 55px;
+      line-height: 82px;
+      color: #5b8fc1;
+      height: 65px;
+    }
+  }
+
+  .caption-text {
+    font-family: $poppinsRegular;
+    font-size: 14px;
+    line-height: 21px;
+    text-align: center;
+    color: #000000;
+  }
+
+  .funky-challenges {
+    padding-top: 30px;
+    display: flex;
+    justify-content: center;
+
+    .challenges-wrapper {
+      width: 362px;
+      height: 156px;
+
+      background: #ffffff;
+      box-shadow: 0px 10px 35px #e2eaec;
+      border-radius: 10px;
+
+      .challenges-container {
+        padding: 15px 21px;
+        width: 100%;
+        height: 100%;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        .challenge-title {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          width : 212px;
+
+          .challenge-title-text {
+            font-family: $poppinsMedium;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 24px;
+
+            color: #294450;
+          }
+
+        }
+        .close-btn{
+          transform: translate(310px, -105px);
+          cursor: pointer;
         }
       }
     }
