@@ -23,7 +23,6 @@ body {
   height: 600px;
 
   nav {
-    height: 48px;
     padding: 15px 20px 15px 16px;
 
     .container {
@@ -144,7 +143,7 @@ body {
           display: flex;
           justify-content: space-between;
           align-items: center;
-          width : 212px;
+          width: 212px;
 
           .challenge-title-text {
             font-family: $poppinsMedium;
@@ -155,12 +154,57 @@ body {
 
             color: #294450;
           }
+        }
+        .message-container{
+          margin-top: 17px;
+        }
+        .challenge-progressbar {
+          margin-top: 15px;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-evenly;
+          height: 36px;
 
+          .top {
+            display: flex;
+            justify-content: space-between;
+
+            .progressbar-text {
+              font-family: $poppinsRegular;
+              font-style: normal;
+              font-weight: normal;
+              font-size: 12px;
+              line-height: 18px;
+              /* identical to box height */
+
+              color: #294450;
+
+              .highlight {
+                color: #97B57F !important;
+              }
+            }
+          }
+          .bottom{
+            .progressbar{
+              margin-top: 7px;
+              width: 100%;
+              height: 10px;
+              background-color: #F3F3F3;
+              border-radius: 20px;
+
+              .progress{
+                height: 10px;
+                background-color: #AED88D;
+                border-radius: 20px;
+              }
+            }
+          }
         }
-        .close-btn{
-          transform: translate(310px, -105px);
-          cursor: pointer;
-        }
+      }
+      .close-btn {
+        transform: translate(330px, 20px);
+        cursor: pointer;
+        position: absolute;
       }
     }
   }

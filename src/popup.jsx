@@ -3,13 +3,13 @@ import { render } from "react-dom";
 import "./style/main.scss";
 
 import Symbol from "./assets/images/points_symbol.png";
-import challengeIcon from "./assets/images/challenge-icon.png";
-import infoIcon from "./assets/images/info.png";
-import closeBtn from "./assets/images/closeBtn.png";
 
 import Header from "./components/Header.jsx";
+import Challenge from "./components/Challenge.jsx";
 
 let pointsCount = 362;
+let progress = 31;
+let rewardPoints = 35;
 
 function Popup() {
   return (
@@ -29,21 +29,7 @@ function Popup() {
           <span className="caption-text">Funky Points</span>
         </div>
       </div>
-      <div className="funky-challenges">
-        <div className="challenges-wrapper">
-          <div className="challenges-container">
-            <div className="challenge-title">
-              <img src={challengeIcon} alt="" />
-              <span className="challenge-title-text">Funky Challenges</span>
-              <img src={infoIcon} alt="" />
-            </div>
-            <div className="close-btn">
-              <img src={closeBtn} alt="" />
-            </div>
-          </div>
-        </div>
-      </div>
-
+      <Challenge prog={progress} points={rewardPoints}></Challenge>
     </div>
   );
 }
