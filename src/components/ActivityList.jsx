@@ -42,9 +42,9 @@ let activities = [
 export default function ActivityList() {
   return (
     <div className="activities">
-      {activities.map((item) => {
+      {activities.map((item, index) => {
         return (
-          <div className="activity">
+          <div className="activity" key={index}>
             <div
               className="activity-image"
               style={{ background: `url(${item.image})` }}
@@ -53,7 +53,7 @@ export default function ActivityList() {
               <div className="top">{item.name}</div>
               <div className="bottom">
                 <span className="item-category">{item.category}</span>
-                <label class="seperator"> | </label>
+                <label className="seperator"> | </label>
                 <span className="highlight">{item.points}pts Earned</span>
               </div>
             </div>

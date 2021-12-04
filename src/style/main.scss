@@ -22,6 +22,11 @@ body {
   width: 400px;
   height: 600px;
 
+  .parent{
+    height: 600px;
+    overflow-y: hidden;
+  }
+
   nav {
     padding: 15px 20px 15px 16px;
 
@@ -304,6 +309,9 @@ body {
           }
         }
       }
+    }
+    .rewards-container{
+      width: 100%;
     }
   }
 }
