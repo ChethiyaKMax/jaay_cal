@@ -6,6 +6,7 @@ import Symbol from "./assets/images/points_symbol.png";
 
 import Header from "./components/Header.jsx";
 import Challenge from "./components/Challenge.jsx";
+import Activity from "./components/Activity.jsx";
 
 let pointsCount = 362;
 let progress = 31;
@@ -30,6 +31,7 @@ function Popup() {
         </div>
       </div>
       <Challenge prog={progress} points={rewardPoints}></Challenge>
+      <Activity></Activity>
     </div>
   );
 }
