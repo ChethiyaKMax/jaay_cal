@@ -38,13 +38,15 @@ let activities = [
 export default function ActivityList() {
   return (
     <div className="activities">
-      {activities.map(item => {
-        <div className="activity">
-          <div
-            className="activity-image"
-            style={{ background: `url(${item.image})` }}
-          ></div>
-        </div>;
+      {activities.map((item) => {
+        return (
+          <div className="activity">
+            <div
+              className="activity-image"
+              style={{ background: `url(${item.image})` }}
+            ></div>
+          </div>
+        );
       })}
     </div>
   );
