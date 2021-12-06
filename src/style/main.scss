@@ -22,6 +22,11 @@ body {
   width: 400px;
   height: 600px;
 
+  .parent{
+    height: 600px;
+    overflow-y: hidden;
+  }
+
   nav {
     padding: 15px 20px 15px 16px;
 
@@ -210,7 +215,7 @@ body {
   }
   .activity-container {
     width: 100%;
-    margin-top: 19px;
+    margin-top: 9px;
     padding: 21px;
 
     .switch {
@@ -304,6 +309,9 @@ body {
           }
         }
       }
+    }
+    .rewards-container{
+      width: 100%;
     }
   }
 }

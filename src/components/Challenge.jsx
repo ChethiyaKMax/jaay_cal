@@ -1,13 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import challengeIcon from "../assets/images/challenge-icon.png";
 import infoIcon from "../assets/images/info.png";
 import closeBtn from "../assets/images/closeBtn.png";
 
+
 export default function Challenges(props){
+  
+  const [isOpen, setOpen] = useState(true);
+
+  const challenge = () =>{
+    setOpen(status => !status)
+  }
+
     return(
-        <div className="funky-challenges">
+        <div className="funky-challenges" style={{display: isOpen ? 'flex': 'none'}}>
         <div className="challenges-wrapper">
-          <div className="close-btn">
+          <div className="close-btn" onClick={challenge}>
             <img src={closeBtn} alt="" />
           </div>
           <div className="challenges-container">
