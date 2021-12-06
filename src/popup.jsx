@@ -32,6 +32,9 @@ function Popup() {
       </div>
       <Challenge prog={progress} points={rewardPoints}></Challenge>
       <Activity></Activity>
+      <div className="mint-button-wrapper">
+        <button className="mint-button">MINT</button>
+      </div>
     </div>
   );
 }

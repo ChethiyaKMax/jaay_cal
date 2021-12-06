@@ -5,9 +5,9 @@ import img2 from "../assets/images/rewards/2.png";
 import img3 from "../assets/images/rewards/3.png";
 import img4 from "../assets/images/rewards/4.png";
 
-import holdIcon from "../assets/images/rewardTypes/hold.png"
-import buyIcon from "../assets/images/rewardTypes/buy.png"
-import mintIcon from "../assets/images/rewardTypes/mint.png"
+import holdIcon from "../assets/images/rewardTypes/hold.png";
+import buyIcon from "../assets/images/rewardTypes/buy.png";
+import mintIcon from "../assets/images/rewardTypes/mint.png";
 
 let activities = [
   {
@@ -58,12 +58,26 @@ export default function ActivityList() {
               </div>
             </div>
             <div className="activity-type">
-                <div className="icon"><img src={item.type == "Hold" ? holdIcon : item.type == 'Buy' ? buyIcon : mintIcon} alt="" /></div>
-                <div className="type">{item.type}</div>
+              <div className="icon">
+                <img
+                  src={
+                    item.type == "Hold"
+                      ? holdIcon
+                      : item.type == "Buy"
+                      ? buyIcon
+                      : mintIcon
+                  }
+                  alt=""
+                />
+              </div>
+              <div className="type">{item.type}</div>
             </div>
           </div>
         );
       })}
+      <div class="load-more-wrapper">
+        <span class="load-more">LOAD MORE</span>
+      </div>
     </div>
   );
 }
