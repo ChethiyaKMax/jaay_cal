@@ -75,8 +75,8 @@ export default function ActivityList() {
           </div>
         );
       })}
-      <div class="load-more-wrapper">
-        <span class="load-more">LOAD MORE</span>
+      <div className="load-more-wrapper">
+        <span className="load-more">LOAD MORE</span>
       </div>
     </div>
   );
