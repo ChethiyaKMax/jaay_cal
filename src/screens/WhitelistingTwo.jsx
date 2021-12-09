@@ -13,6 +13,8 @@ import twFollowIcon from "../assets/images/twitter_follow_btn.png";
 import twShareIcon from "../assets/images/twitter_share_btn.png";
 import discordIcon from "../assets/images/discord_btn.png";
 
+import closeWhite from "../assets/images/close-white.png";
+
 export default function WhitelistingTwo(props) {
   const [twitterFollow, setTwitter] = useState(false);
 
@@ -66,6 +68,7 @@ export default function WhitelistingTwo(props) {
 
   return (
     <div className="whitelisting-container">
+      <img src={closeWhite} className="close-white" />
       <div className="follow-wrapper">
         <div className="welcome-message-wrapper">
           <span className="follow-title">{currData.title}</span>
