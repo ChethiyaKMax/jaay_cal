@@ -1,15 +1,5 @@
-chrome.runtime.onInstalled.addListener(() => {
-  chrome.storage.local.get("currPoints", (result) => {
-    if (Object.keys(result).length === 0)
-      chrome.storage.local.set({ currPoints: 0});
-  });
-});
-chrome.storage.local.get("currPoints", (result) => {
-  if (Object.keys(result).length === 0)
-    chrome.storage.local.set({ currPoints: 0});
-});
-chrome.storage.local.get("redeems", (result) => {
-  if (Object.keys(result).length === 0)
-    chrome.storage.local.set({ redeems: []});
-    console.log('set')
+chrome.storage.local.get(["currPoints", "redeems"], (result) => {
+  if (result.currPoints === undefined)
+    chrome.storage.local.set({ currPoints: 0 });
+  if (result.redeems === undefined) chrome.storage.local.set({ redeems: [] });
 });
