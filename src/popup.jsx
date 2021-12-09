@@ -4,6 +4,7 @@ import "./style/main.scss";
 
 import Whitelisting from "./screens/Whitelisting.jsx";
 import WhitelistingTwo from "./screens/WhitelistingTwo.jsx";
+import WhitelistingThree from "./screens/WhitelistingThree.jsx";
 import Main from "./screens/Main.jsx";
 import StartPage from "./screens/StartPage.jsx";
 
@@ -40,8 +41,9 @@ function Popup() {
     <div className="parent">
       {!isLoggedIn && <StartPage />}
       {isLoggedIn && progress == 0 &&  <Whitelisting />}
-      {isLoggedIn && progress > 0 && <WhitelistingTwo progress={progress} email={userEmail} />}
-      {/* {isLoggedIn && <Main session={isLoggedIn}/>} */}
+      {isLoggedIn && progress > 0 && progress < 80 && <WhitelistingTwo progress={progress} email={userEmail} />}
+      {isLoggedIn && progress == 80 && <WhitelistingThree  />}
+      {isLoggedIn && progress == 100 && <Main session={isLoggedIn}/>}
     </div>
   );
 }

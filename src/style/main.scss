@@ -1018,15 +1018,48 @@ body {
         border-radius: 5px;
         border: none;
         outline: none;
-        color: #FFFFFF;
+        color: #ffffff;
         display: flex;
         justify-content: space-evenly;
         align-items: center;
         font-family: $poppinsSemibold;
         font-size: 18px;
-        
-        label{
+
+        label {
           margin-left: 11px;
+        }
+      }
+      .total-earned-wrapper {
+        display: flex;
+        width: 311.23px;
+        height: 114.29px;
+        justify-content: space-evenly;
+        margin-bottom: 41.54px;
+        margin-top: 23.54;
+
+        .left {
+          width: 200.62px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+
+          .text {
+            font-family: $poppinsRegular;
+            font-size: 18px;
+            line-height: 27px;
+            text-align: center;
+
+            color: #ffffff;
+          }
+          .highlight {
+            font-family: $poppinsRegular;
+            font-size: 22px;
+            line-height: 33px;
+            text-align: center;
+
+            color: #ffeeb1;
+          }
         }
       }
     }
@@ -1044,7 +1077,7 @@ body {
       font-size: 16px;
       line-height: 24px;
       text-align: center;
-      max-width: 292px;
+      max-width: 357px;
       height: 48px;
       color: #ffffff;
       margin-bottom: 27px;

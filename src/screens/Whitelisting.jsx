@@ -34,7 +34,7 @@ export default function Whitelisting() {
           </div>
           <span className="points-name">Funky Points</span>
           <Progressbar progress={0} nextReward={10}></Progressbar>
-          <span className="want-more">
+          <span className="want-more" style={{ marginTop: "27.74px" }}>
             You need 50 Funky Points to Join the Whitelist
           </span>
           <div className="email-input-container">
