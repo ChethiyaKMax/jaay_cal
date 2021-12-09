@@ -5,7 +5,7 @@ export default function Progressbar(props) {
     <div className="progressbar-container">
       <div className="top">
         <div className="left">
-          <span className="completed">{props.progress}</span>
+          <span className="completed">{`${props.progress}%`}</span>
           <span className="light-text">Completed</span>
         </div>
         <div className="right">
@@ -15,7 +15,7 @@ export default function Progressbar(props) {
       </div>
       <div className="bottom">
         <div className="progress-background">
-          <div className="progress"></div>
+          <div className="progress" style={{width: 3.24 * props.progress}}></div>
         </div>
       </div>
     </div>
