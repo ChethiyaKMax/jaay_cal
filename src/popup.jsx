@@ -3,28 +3,44 @@ import { render } from "react-dom";
 import "./style/main.scss";
 
 import Whitelisting from "./screens/Whitelisting.jsx";
+import WhitelistingTwo from "./screens/WhitelistingTwo.jsx";
 import Main from "./screens/Main.jsx";
 import StartPage from "./screens/StartPage.jsx";
 
 function Popup() {
   const [isLoggedIn, setLoggedIn] = useState(false);
-
-  chrome.storage.local.get("userLogin", (res) => {
+  const [progress, setProgress] = useState(0);
+  const [userEmail, setUserEmail] = useState('')
+;
+  chrome.storage.local.get(["userLogin", "progress", "userEmail"], (res) => {
     if (res.userLogin === undefined) {
       setLoggedIn(false);
     } else {
       setLoggedIn(res.userLogin);
     }
+    if(res.progress === undefined){
+      setProgress(0)
+    }else{
+      setProgress(res.progress)
+    }
+    if(res.userEmail === undefined){
+      setProgress(0)
+    }else{
+      setUserEmail(res.userEmail)
+    }
   });
   chrome.storage.onChanged.addListener((result) => {
-    console.log(result);
+    console.log(result)
     if(result.userLogin) setLoggedIn(result.userLogin.newValue);
+    if(result.progress) setProgress(parseInt(result.progress.newValue));
+    if(result.userEmail) setUserEmail(result.userEmail.newValue);
   });
-
+  console.log(progress);
   return (
     <div className="parent">
       {!isLoggedIn && <StartPage />}
-      {isLoggedIn && <Whitelisting />}
+      {isLoggedIn && progress == 0 &&  <Whitelisting />}
+      {isLoggedIn && progress > 0 && <WhitelistingTwo progress={progress} email={userEmail} />}
       {/* {isLoggedIn && <Main session={isLoggedIn}/>} */}
     </div>
   );

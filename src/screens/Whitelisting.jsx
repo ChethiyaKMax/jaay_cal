@@ -1,10 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import Progressbar from "../components/Progressbar.jsx";
 import emailIcon from "../assets/images/emailIcon.png";
 import pointsSymbol from "../assets/images/point_symbol_small.png";
 import submitArrow from "../assets/images/submit_arrow.png";
 
 export default function Whitelisting() {
+  const [email, setEmail] = useState("");
+
+  const getEmail = (evt) => {
+    setEmail(evt.target.value);
+    console.log(evt.target.value);
+  };
+
+  const saveEmail = () => {
+    chrome.storage.local.set({ userEmail: email, progress: 20 });
+  };
+
   return (
     <div className="whitelisting-container">
       <div className="email-input-wrapper">
@@ -30,8 +41,15 @@ export default function Whitelisting() {
             <div className="img-container">
               <img src={emailIcon} alt="" className="email-icon" />
             </div>
-            <input type="text" className="email-input" placeholder="Enter your email" />
-            <button className="submit-email"><img src={submitArrow} /></button>
+            <input
+              type="text"
+              className="email-input"
+              placeholder="Enter your email"
+              onChange={(e) => getEmail(e)}
+            />
+            <button className="submit-email" onClick={() => saveEmail()}>
+              <img src={submitArrow} />
+            </button>
           </div>
           <span className="maybe-later">maybe later</span>
         </div>
