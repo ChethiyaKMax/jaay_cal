@@ -41,7 +41,10 @@ body {
 
   .parent {
     height: 600px;
-    overflow-y: hidden;
+
+    .hidden {
+      display: none;
+    }
   }
   .start-page-wrapper {
     display: flex;
@@ -200,7 +203,7 @@ body {
 
           transition: 0.3s ease-in-out;
 
-          &:hover{
+          &:hover {
             background: #c05048;
           }
         }
@@ -293,13 +296,35 @@ body {
       height: 65px;
     }
   }
+  .scroller {
+    height: 340px;
+    overflow-y: hidden;
+    transition: 0.3s ease-in-out;
 
+    &:hover {
+      overflow-y: overlay;
+    }
+
+    &::-webkit-scrollbar-track {
+      background-color: #ffffff;
+    }
+
+    &::-webkit-scrollbar {
+      width: 8px;
+      background-color: #f5f5f5;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: #888888;
+      border-radius: 8px;
+    }
+  }
   .caption-text {
     font-family: $poppinsRegular;
     font-size: 14px;
     line-height: 21px;
     text-align: center;
-    color: #000000;
+    color: #929292;
   }
 
   .funky-challenges {
@@ -310,6 +335,7 @@ body {
     .challenges-wrapper {
       width: 362px;
       height: 156px;
+      position: relative;
 
       background: #ffffff;
       box-shadow: 0px 10px 35px #e2eaec;
@@ -749,6 +775,225 @@ body {
       /* identical to box height */
 
       color: #ffffff;
+    }
+  }
+  .whitelisting-container {
+    background: #354d64;
+    height: 600px;
+
+    .welcome-message-wrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      align-items: center;
+      padding-top: 54.67px;
+
+      .welcome-text {
+        width: 89px;
+        height: 27px;
+        left: 156px;
+        top: 54.52px;
+
+        font-family: $poppinsRegular;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 18px;
+        line-height: 27px;
+        /* identical to box height */
+
+        text-align: center;
+
+        color: #ffffff;
+      }
+      .welcome-username {
+        height: 42px;
+        left: 90px;
+        top: 79.21px;
+
+        font-family: $poppinsRegular;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 28px;
+        line-height: 42px;
+        /* identical to box height */
+
+        text-align: center;
+
+        color: #fbb03b;
+      }
+      .welcome-bold-text {
+        width: 269px;
+        height: 58px;
+        left: 68px;
+        top: 133px;
+        margin-top: 11.67px;
+
+        font-family: $poppinsSemibold;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 27px;
+        text-align: center;
+
+        color: #ffffff;
+      }
+      .points-wrapper {
+        margin-top: 13.64px;
+
+        .background-circle {
+          width: 95.36px;
+          height: 95.36px;
+          border-radius: 50%;
+          background: #fbb03b;
+
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          .currency-symbol {
+            width: 14.95px;
+            height: 17.2px;
+            transform: translate(3px, -4px);
+          }
+          .points {
+            width: 38px;
+            height: 67.29px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transform: translateX(8px);
+            font-family: $poppinsRegular;
+            font-size: 40px;
+            line-height: 60px;
+            text-align: center;
+
+            color: #ffeeb1;
+          }
+        }
+      }
+      .points-name {
+        width: 164.18px;
+        height: 24.67px;
+
+        font-family: $poppinsRegular;
+        font-size: 22px;
+        line-height: 33px;
+        text-align: center;
+        margin-top: 10.08px;
+        color: #ffeeb1;
+      }
+      .progressbar-container {
+        width: 100%;
+        padding: 25.76px 38px;
+
+        .top {
+          display: flex;
+          justify-content: space-between;
+
+          font-family: $poppinsRegular;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 12px;
+          line-height: 18px;
+          /* identical to box height */
+
+          color: #ffffff;
+
+          .left {
+            .light-text {
+              margin-left: 12px;
+            }
+            .completed {
+              color: #97b57f;
+            }
+          }
+          .right {
+            .light-text {
+              margin-right: 5px;
+            }
+            .next-reward {
+              color: #97b57f;
+            }
+          }
+        }
+        .bottom {
+          .progress-background {
+            height: 10px;
+            width: 100%;
+            background: #f3f3f3;
+            border-radius: 10px;
+            margin-top: 12px;
+
+            .progress {
+              background: #aed88d;
+              width: 10px;
+              height: 10px;
+              border-radius: 10px;
+            }
+          }
+        }
+      }
+      .want-more {
+        width: 211px;
+        height: 48px;
+
+        font-family: $poppinsRegular;
+        font-size: 16px;
+        line-height: 24px;
+        text-align: center;
+
+        color: #ffffff;
+      }
+      .email-input-container {
+        background: #577da3;
+        display: flex;
+        height: 50px;
+        border-radius: 5px;
+        width: 274.3px;
+        justify-content: space-around;
+        margin-top: 15.95px;
+
+        .email-input {
+          width: 173px;
+          height: 50px;
+          border: none;
+          background: #577da3;
+          outline: none;
+          color: #ffffff;
+
+          &::placeholder {
+            color: #ffffff;
+          }
+        }
+        .img-container {
+          width: 47px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        .submit-email {
+          width: 52.65px;
+          outline: none;
+          border: none;
+          border-radius: 0px 5px 5px 0px;
+          background-color: #e55950;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+      .maybe-later {
+        margin-top: 14.76px;
+        cursor: pointer;
+        font-family: $poppinsRegular;
+        font-size: 16px;
+        line-height: 24px;
+        /* identical to box height */
+
+        text-align: center;
+
+        color: #ffffff;
+      }
     }
   }
 }

@@ -8,16 +8,6 @@ export default function HintPopup(props) {
   return (
     <>
       <div
-        className={p1 ? "hint-bubble hidden" : "hint-bubble"}
-        onClick={(e) => {
-          setPopOne(true);
-          setDisplay(e);
-        }}
-      >
-        <img src={bulb} alt="" />
-        <span>{"Another Funky Points for this"}</span>
-      </div>
-      <div
         className={p2 ? "hint-bubble-2 hidden" : "hint-bubble-2"}
         onClick={(e) => {
           setPopTwo(true);
