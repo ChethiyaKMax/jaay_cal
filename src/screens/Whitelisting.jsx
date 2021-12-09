@@ -4,6 +4,8 @@ import emailIcon from "../assets/images/emailIcon.png";
 import pointsSymbol from "../assets/images/point_symbol_small.png";
 import submitArrow from "../assets/images/submit_arrow.png";
 
+import closeWhite from "../assets/images/close-white.png";
+
 export default function Whitelisting() {
   const [email, setEmail] = useState("");
 
@@ -18,6 +20,7 @@ export default function Whitelisting() {
 
   return (
     <div className="whitelisting-container">
+      <img src={closeWhite} className="close-white" />
       <div className="email-input-wrapper">
         <div className="welcome-message-wrapper">
           <span className="welcome-text">Welcome,</span>

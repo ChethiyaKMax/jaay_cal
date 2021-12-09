@@ -4,6 +4,8 @@ import Guy from "../assets/images/guy.png";
 import discord from "../assets/images/discord_complete.png";
 import fiftyPoints from "../assets/images/50_points.png";
 
+import closeWhite from "../assets/images/close-white.png";
+
 export default function WhitelistingThree() {
   const [twitterFollow, setTwitter] = useState(false);
 
@@ -13,6 +15,7 @@ export default function WhitelistingThree() {
 
   return (
     <div className="whitelisting-container">
+      <img src={closeWhite} className="close-white" />
       <div className="follow-wrapper">
         <div className="welcome-message-wrapper">
           <span className="follow-title">
