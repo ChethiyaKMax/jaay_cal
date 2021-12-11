@@ -18,9 +18,13 @@ export default function Whitelisting() {
     chrome.storage.local.set({ userEmail: email, progress: 20 });
   };
 
+  const closeBtn = ()=>{
+    chrome.storage.local.set({closed: true})
+  }
+
   return (
     <div className="whitelisting-container">
-      <img src={closeWhite} className="close-white" />
+      <img src={closeWhite} className="close-white" onClick={()=> closeBtn()}/>
       <div className="email-input-wrapper">
         <div className="welcome-message-wrapper">
           <span className="welcome-text">Welcome,</span>

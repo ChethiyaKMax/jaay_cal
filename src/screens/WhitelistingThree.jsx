@@ -13,9 +13,12 @@ export default function WhitelistingThree() {
     chrome.storage.local.set({ progress: 100 });
   };
 
+  const closeBtn = ()=>{
+    chrome.storage.local.set({closed: true})
+  }
   return (
     <div className="whitelisting-container">
-      <img src={closeWhite} className="close-white" />
+      <img src={closeWhite} className="close-white" onClick={()=> closeBtn()}/>
       <div className="follow-wrapper">
         <div className="welcome-message-wrapper">
           <span className="follow-title">

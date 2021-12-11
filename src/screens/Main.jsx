@@ -16,7 +16,7 @@ let rewardPoints = 35;
 let loggedIn = false;
 
 export default function Main(props) {
-  const [pointsCount, setPointsCount] = useState(363);
+  const [pointsCount, setPointsCount] = useState(0);
 
   chrome.storage.onChanged.addListener((result) => {
     if (result.currPoints) setPointsCount(result.currPoints.newValue);

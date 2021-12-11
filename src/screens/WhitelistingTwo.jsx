@@ -66,9 +66,13 @@ export default function WhitelistingTwo(props) {
     });
   };
 
+  const closeBtn = ()=>{
+    chrome.storage.local.set({closed: true})
+  }
+
   return (
     <div className="whitelisting-container">
-      <img src={closeWhite} className="close-white" />
+      <img src={closeWhite} className="close-white" onClick={()=> closeBtn()}/>
       <div className="follow-wrapper">
         <div className="welcome-message-wrapper">
           <span className="follow-title">{currData.title}</span>
