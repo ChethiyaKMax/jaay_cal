@@ -4,6 +4,6 @@ NodeJs
 
 # How to test
 
-npm install yarn
-yarn
-yarn dev
+* npm install yarn
+* yarn
+* yarn dev
