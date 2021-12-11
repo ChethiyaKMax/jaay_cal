@@ -368,6 +368,20 @@ body {
         }
         .message-container {
           margin-top: 17px;
+          display: flex;
+          justify-content: space-between;
+
+          .go-button{
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            color: #E55950;
+            cursor: pointer;
+
+            img{
+              margin-left: 4px;
+            }
+          }
         }
         .challenge-progressbar {
           margin-top: 15px;
