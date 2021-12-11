@@ -8,6 +8,7 @@ import WhitelistingThree from "./screens/WhitelistingThree.jsx";
 import Main from "./screens/Main.jsx";
 import StartPage from "./screens/StartPage.jsx";
 
+
 function Popup() {
   const [isLoggedIn, setLoggedIn] = useState(false);
   const [progress, setProgress] = useState(0);
