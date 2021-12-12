@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-<<<<<<< HEAD
 import Progressbar from "../components/Progressbar.jsx";
 import Invitations from "../components/Invitations.jsx";
 
@@ -41,11 +40,5 @@ export default function Referral(props){
                 </button>
             </div>
         </div>
-=======
-
-export default function Referral(props){
-    return(
-        <div className="referral-container"></div>
->>>>>>> 6be1f8ec506e87bf6dea1cc25379e2a419343fdd
-    )
+    );
 }
