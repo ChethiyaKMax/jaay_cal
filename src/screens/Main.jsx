@@ -6,7 +6,7 @@ import Symbol from "../assets/images/points_symbol.png";
 import plus from "../assets/images/plus.png";
 
 import Header from "../components/Header.jsx";
-import Challenge from "../components/Challenge.jsx";
+import Challenges from "../components/Challenge.jsx";
 import Activity from "../components/Activity.jsx";
 import HintPopup from "../components/HintPopup.jsx";
 
@@ -16,6 +16,7 @@ let rewardPoints = 35;
 let loggedIn = false;
 
 export default function Main(props) {
+  
   const [pointsCount, setPointsCount] = useState(0);
 
   chrome.storage.onChanged.addListener((result) => {
@@ -44,7 +45,7 @@ export default function Main(props) {
         </div>
       </div>
       <div className="scroller">
-        <Challenge prog={progress} points={rewardPoints}></Challenge>
+        <Challenges prog={progress} points={rewardPoints}></Challenges>
         <Activity></Activity>
       </div>
       <HintPopup></HintPopup>
