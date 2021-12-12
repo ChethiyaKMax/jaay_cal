@@ -1,4 +1,8 @@
+<<<<<<< HEAD
+import React, { useState } from "react";
+=======
 import React from "react";
+>>>>>>> 6be1f8ec506e87bf6dea1cc25379e2a419343fdd
 
 import funkyLogo from "../assets/images/menu-logo.png";
 import menuMissions from "../assets/images/menu_missions.png";
@@ -9,6 +13,60 @@ import menuClose from "../assets/images/menu_close.png";
 import Referral from "../screens/Referral.jsx";
 
 export default function Menu(props) {
+<<<<<<< HEAD
+  const [isReferral, setReferral] = useState(false);
+
+  const referral = () => {
+    setReferral(!isReferral);
+  };
+
+  return (
+    <>
+      {isReferral && (
+        <Referral
+          referral={referral}
+          setReferral={setReferral}
+          isReferral={isReferral}
+        />
+      )}
+
+      <div className={props.isOpen ? "menu-wrapper active" : "menu-wrapper"}>
+        <div
+          className={props.isOpen ? "menu-container active" : "menu-container"}
+        >
+          <div className="menu">
+            <img
+              src={menuClose}
+              alt=""
+              className="close-button"
+              onClick={() => props.openMenu()}
+            />
+            <img className="menu-logo" src={funkyLogo} alt="" />
+            <div className="menu-links">
+              <div className="menu-item">
+                <img src={menuMissions} alt="" />
+                <div className="menu-item-text">Missions</div>
+              </div>
+              <div className="menu-item">
+                <img src={menuRef} alt="" />
+                <div
+                  className="menu-item-text"
+                  onClick={() => {
+                    referral();
+                  }}
+                >
+                  Referrals
+                </div>
+              </div>
+              <div className="menu-item">
+                <img src={menuRewards} alt="" />
+                <div className="menu-item-text">My Rewards</div>
+              </div>
+              <div className="menu-item">
+                <img src={menuAbout} alt="" />
+                <div className="menu-item-text">About Funky</div>
+              </div>
+=======
   return (
     <div className={props.isOpen ? "menu-wrapper active" : "menu-wrapper"}>
       <div
@@ -38,10 +96,15 @@ export default function Menu(props) {
             <div className="menu-item">
               <img src={menuAbout} alt="" />
               <div className="menu-item-text">About Funky</div>
+>>>>>>> 6be1f8ec506e87bf6dea1cc25379e2a419343fdd
             </div>
           </div>
         </div>
       </div>
+<<<<<<< HEAD
+    </>
+=======
     </div>
+>>>>>>> 6be1f8ec506e87bf6dea1cc25379e2a419343fdd
   );
 }
