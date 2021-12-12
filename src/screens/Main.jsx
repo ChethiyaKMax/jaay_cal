@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, {useState } from "react";
 import { render } from "react-dom";
 import "../style/main.scss";
 
@@ -16,7 +16,7 @@ let rewardPoints = 35;
 let loggedIn = false;
 
 export default function Main(props) {
-  
+
   const [pointsCount, setPointsCount] = useState(0);
 
   chrome.storage.onChanged.addListener((result) => {
@@ -45,7 +45,7 @@ export default function Main(props) {
         </div>
       </div>
       <div className="scroller">
-        <Challenges prog={progress} points={rewardPoints}></Challenges>
+        <Challenges ></Challenges>
         <Activity></Activity>
       </div>
       <HintPopup></HintPopup>
