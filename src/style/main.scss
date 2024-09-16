@@ -1101,6 +1101,103 @@ body {
       }
     }
   }
+  .invite-container {
+    .invite-content-wrapper {
+      .top-section {
+        width: 100%;
+        height: 521px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .caption-text {
+          margin-top: 72px;
+          width: 314px;
+          height: 48px;
+
+          font-family: $poppinsRegular;
+          font-size: 16px;
+          line-height: 24px;
+          text-align: center;
+
+          color: #ffffff;
+        }
+        .white-logo {
+          margin-top: 70px;
+        }
+        .ref-link-container {
+          margin-top: 33px;
+          width: 321.65px;
+          height: 43.46px;
+
+          background: #354d64;
+
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          .ref-link {
+            width: 179px;
+            height: 21px;
+
+            font-family: $poppinsRegular;
+            font-size: 14px;
+            line-height: 21px;
+            /* identical to box height */
+
+            color: #ffeeb1;
+          }
+        }
+        .copy-button {
+          margin-top: 22px;
+          width: 118.5px;
+          height: 39.24px;
+          background: #e55950;
+          border-radius: 5px;
+          border: none;
+          outline: none;
+
+          font-family: $poppinsSemibold;
+          font-size: 16px;
+          line-height: 24px;
+          /* identical to box height */
+
+          color: #ffffff;
+
+          &:hover {
+            background: #bb524a;
+          }
+        }
+        .progressbar-wrapper {
+          margin-top: 86px;
+          width: 321.65px;
+
+          .progressbar-container {
+            padding: 0;
+          }
+        }
+      }
+      .bottom-section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #354d64;
+        height: 79px;
+
+        .social-icon-container {
+          width: 225px;
+          height: 34px;
+          display: flex;
+          justify-content: space-between;
+
+          img{
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
   .follow-wrapper {
     .follow-title {
       font-family: $poppinsMedium;

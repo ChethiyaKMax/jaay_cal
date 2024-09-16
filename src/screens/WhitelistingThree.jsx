@@ -10,7 +10,7 @@ export default function WhitelistingThree() {
   const [twitterFollow, setTwitter] = useState(false);
 
   const save = () => {
-    chrome.storage.local.set({ progress: 100 });
+    chrome.storage.local.set({ progress: 100, whitelistDone: true });
   };
 
   const closeBtn = ()=>{

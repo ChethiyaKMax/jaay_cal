@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, {useState } from "react";
 import { render } from "react-dom";
 import "./style/main.scss";
 
@@ -7,6 +7,7 @@ import WhitelistingTwo from "./screens/WhitelistingTwo.jsx";
 import WhitelistingThree from "./screens/WhitelistingThree.jsx";
 import Main from "./screens/Main.jsx";
 import StartPage from "./screens/StartPage.jsx";
+import InviteFriends from "./screens/InviteFriends.jsx";
 
 
 function Popup() {
@@ -14,8 +15,9 @@ function Popup() {
   const [progress, setProgress] = useState(0);
   const [userEmail, setUserEmail] = useState('');
   const [closed, setClosed] = useState(false);
+  const [complete, setComplete] = useState(false);
 ;
-  chrome.storage.local.get(["userLogin", "progress", "userEmail", "closed"], (res) => {
+  chrome.storage.local.get(["userLogin", "progress", "userEmail", "closed", "whitelistDone"], (res) => {
     if (res.userLogin === undefined) {
       setLoggedIn(false);
     } else {
@@ -23,8 +25,10 @@ function Popup() {
     }
     if(res.progress === undefined){
       setProgress(0)
+      setComplete(false)
     }else{
       setProgress(res.progress)
+      if(progress < 100) setComplete(false)
     }
     if(res.userEmail === undefined){
       setProgress(0)
@@ -36,6 +40,11 @@ function Popup() {
     }else{
       setClosed(res.closed);
     }
+    if(res.whitelistDone === undefined){
+      setComplete(false);
+    }else{
+      setComplete(res.whitelistDone)
+    }
 
   });
   chrome.storage.onChanged.addListener((result) => {
@@ -44,6 +53,7 @@ function Popup() {
     if(result.progress) setProgress(parseInt(result.progress.newValue));
     if(result.userEmail) setUserEmail(result.userEmail.newValue);
     if(result.closed) setClosed(result.closed.newValue);
+    if(result.whitelistDone) setComplete(result.whitelistDone.newValue);
   });
   console.log(progress);
   return (
@@ -51,8 +61,9 @@ function Popup() {
       {!isLoggedIn && <StartPage />}
       {isLoggedIn && progress == 0 && !closed && <Whitelisting />}
       {isLoggedIn && progress > 0 && progress < 80 && !closed && <WhitelistingTwo progress={progress} email={userEmail} />}
-      {isLoggedIn && progress == 80 && !closed && <WhitelistingThree  />}
-      {isLoggedIn && (progress == 100 || closed) && <Main session={isLoggedIn}/>}
+      {isLoggedIn && progress == 80 && !closed && <InviteFriends progress={progress} refUrl={'funky.com/referral/00223'} />}
+      {isLoggedIn && progress == 100 && !closed && !complete && <WhitelistingThree  />}
+      {isLoggedIn && (progress == 100 || closed) && complete && <Main session={isLoggedIn}/>}
     </div>
   );
 }

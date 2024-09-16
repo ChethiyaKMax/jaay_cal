@@ -30,6 +30,12 @@ const rewardsArr = [
     buttonText: "Join our Discord & Say GM",
   },
   {
+    progress: 80,
+    nextProgress: 20,
+    nextReward: 10,
+    buttonText: "Invite your friends",
+  },
+  {
     progress: 100,
     nextProgress: 0,
     nextReward: 0,
@@ -37,14 +43,14 @@ const rewardsArr = [
   },
 ];
 
-export default function Challenges(props) {
+export default function Challenges() {
   const [isOpen, setOpen] = useState(true);
   const [progress, setProgress] = useState(0);
   const [currStat, setCurrStat] = useState("");
   const [nextReward, setReward] = useState(0);
 
   const challenge = () => {
-    setOpen((status) => !status);
+    setOpen(!isOpen);
   };
 
   const getStatus = () => {
@@ -80,7 +86,7 @@ export default function Challenges(props) {
       style={{ display: isOpen ? "flex" : "none" }}
     >
       <div className="challenges-wrapper">
-        <div className="close-btn" onClick={challenge}>
+        <div className="close-btn" onClick={() => challenge()}>
           <img src={closeBtn} alt="" />
         </div>
         <div className="challenges-container">

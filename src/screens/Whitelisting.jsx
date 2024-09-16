@@ -15,7 +15,7 @@ export default function Whitelisting() {
   };
 
   const saveEmail = () => {
-    chrome.storage.local.set({ userEmail: email, progress: 20 });
+    chrome.storage.local.set({ userEmail: email, progress: 20});
   };
 
   const closeBtn = ()=>{
